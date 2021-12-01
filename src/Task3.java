@@ -9,12 +9,16 @@ public class Task3 {
         System.out.println(thePhoneIs);
     }
     public static String correctPhoneNumber(String phoneNumber){
+        int i;
         String line = "-";
         String wrongNumber = " ";
         String thePhoneNumber;
         String regularPrefix = "05";
-
-        if (phoneNumber.length() > 12 | phoneNumber.length() < 10) {
+        for(i=0;i<phoneNumber.length();i++){
+        if (phoneNumber.charAt(i)!='0'&& phoneNumber.charAt(i)!='1'&& phoneNumber.charAt(i)!='2'&& phoneNumber.charAt(i)!='3'&&phoneNumber.charAt(i)!='4'&&phoneNumber.charAt(i)!='5'&&phoneNumber.charAt(i)!='6'&&phoneNumber.charAt(i)!='7'&&phoneNumber.charAt(i)!='8'&&phoneNumber.charAt(i)!='9'&&phoneNumber.charAt(i)!='-'){
+         phoneNumber=wrongNumber;
+        }}
+         if (phoneNumber.length() > 12 | phoneNumber.length() < 10) {
             thePhoneNumber = wrongNumber;
         }
         else if (phoneNumber.charAt(0) == '9' && phoneNumber.charAt(1) == '7' && phoneNumber.charAt(2) == '2' && phoneNumber.length() == 12){
